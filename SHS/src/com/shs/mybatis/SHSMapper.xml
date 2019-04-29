@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shs.mybatis.SHSMapper">
+	<insert id="memInsert" parameterType="MemberDTO">
+		insert into shsmember(sid, sname, sage, smajor, sphone)
+		values(seq_shsmember_sid.nextval, #{sname}, #{sage}, #{smajor}, #{sphone})
+	</insert>
+	<select id="memSelect" resultType="MemberDTO">
+		select * from shsmember
+		order by sid
+	</select>
+	<select id="memInfo" parameterType="String" resultType="MemberDTO">
+		select * from shsmember 
+		where sid = #{id}
+	</select>
+	<update id="memUpdate" parameterType="MemberDTO">
+		update shsmember
+		set sname = #{sname},
+			sage = #{sage},
+			smajor = #{smajor},
+			sphone = #{sphone}
+		where sid = #{sid}
+	</update>
+	<delete id="memDelete" parameterType="String">
+		delete from shsmember where sid = #{sid}
+	</delete>
+</mapper>
