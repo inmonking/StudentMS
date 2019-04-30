@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.shs.action.Action;
 import com.shs.action.ActionForward;
 import com.shs.action.IndexAction;
+import com.shs.action.InsertAction;
+import com.shs.action.InsertPlayAction;
+import com.shs.action.WelcomeAction;
 
 /**
  * Servlet implementation class FrontController
@@ -52,7 +55,18 @@ public class FrontController extends HttpServlet {
 		if(command.equals("/index.shs")) {
 			action = new IndexAction();
 			forward = action.execute(request, response);
+		}else if(command.equals("/insert.shs")) {
+			action = new InsertAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/insertPlay.shs")) {
+			action = new InsertPlayAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/welcome.shs")) {
+			action = new WelcomeAction();
+			forward = action.execute(request, response);
 		}
+		
+		
 		
 		if(forward != null) {
 			if(forward.isRedirect()) {
