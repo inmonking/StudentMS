@@ -9,13 +9,7 @@
 	<title>학생수정</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Jua');
-		*{
-			font-family: 'Jua', sans-serif;
-		}
-
-		body, ul{margin: 0; padding: 0;}
-		a{color: inherit;text-decoration: none;}
-		ul{list-style: none;}
+		@import url("css/common.css");
 
 		.content{
 			width: 390px;
@@ -108,12 +102,7 @@
 </head>
 <body>
 	<div class="content">
-		<a href="index.jsp">
-			<div class="shs_title">
-				JAVA기반 스마트하이브리드<br>
-				개발자 과정 2기
-			</div>
-		</a>
+		<%@ include file="include/header.jsp" %>
 		<div class="shs_manager"> - 학사수정 - </div>
 
 		<form action="SHSUpdate" id="frm_update" name="frm_update" method="POST">

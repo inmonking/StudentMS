@@ -11,13 +11,7 @@
 	<title>출석부</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Jua');
-		*{
-			font-family: 'Jua', sans-serif;
-		}
-
-		body, ul{margin: 0; padding: 0;}
-		a{color: inherit;text-decoration: none;}
-		ul{list-style: none;}
+		@import url("css/common.css");
 
 		.content{
 			width: 390px;
@@ -151,12 +145,7 @@
 				</div>
 			</div>
 		</div>
-		<a href="index.jsp">
-			<div class="shs_title">
-				JAVA기반 스마트하이브리드<br>
-				개발자 과정 2기
-			</div>
-		</a>
+		<%@ include file="include/header.jsp" %>
 		<div class="shs_manager"> - 출석부 - </div>
 		<div class="in_content">
 			<table>

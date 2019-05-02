@@ -7,13 +7,7 @@ pageEncoding="UTF-8"%>
 	<title>학생등록</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Jua');
-		*{
-			font-family: 'Jua', sans-serif;
-		}
-
-		body, ul{margin: 0; padding: 0;}
-		a{color: inherit;text-decoration: none;}
-		ul{list-style: none;}
+		@import url("css/common.css");
 
 		.content{
 			width: 390px;
@@ -97,12 +91,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 	<div class="content">
-		<div class="shs_title">
-			<a href="index.shs">
-				JAVA기반 스마트하이브리드<br>
-				개발자 과정 2기
-			</a>
-		</div>
+		<%@ include file="include/header.jsp" %>
 		<div class="shs_manager"> - 학사등록 - </div>
 
 		<form action="insertPlay.shs" id="frm_insert" name="frm_insert" method="POST">
