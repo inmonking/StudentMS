@@ -1,6 +1,7 @@
 package com.shs.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,8 +15,11 @@ import com.shs.action.ActionForward;
 import com.shs.action.IndexAction;
 import com.shs.action.InsertAction;
 import com.shs.action.InsertPlayAction;
+import com.shs.action.SearchAction;
 import com.shs.action.SelectAction;
 import com.shs.action.WelcomeAction;
+import com.shs.dao.MemberDAO;
+import com.shs.dto.MemberDTO;
 
 /**
  * Servlet implementation class FrontController
@@ -67,6 +71,9 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		}else if(command.equals("/select.shs")) {
 			action = new SelectAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/search.shs")) {
+			action = new SearchAction();
 			forward = action.execute(request, response);
 		}
 		

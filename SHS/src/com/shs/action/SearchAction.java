@@ -10,19 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 import com.shs.dao.MemberDAO;
 import com.shs.dto.MemberDTO;
 
-public class SelectAction implements Action {
+public class SearchAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "shs_select.jsp";
+		String url = "shs_search.jsp";
+		String name = null;
+		int search_cnt = 0;
+		if((name = request.getParameter("name"))!=null) {
+			MemberDAO mDao =MemberDAO.getInstance();
+			List<MemberDTO> list = mDao.memSelect(name);
+			search_cnt = list.size();
+			request.setAttribute("shslist", list);
+			request.setAttribute("name", name);
+		}
+		request.setAttribute("search_cnt", search_cnt);
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
 		forward.setRedirect(false);
 
-		MemberDAO mDao =MemberDAO.getInstance();
-		List<MemberDTO> list = mDao.memSelect();
-		request.setAttribute("shslist", list);
 		
 		return forward;
 	}

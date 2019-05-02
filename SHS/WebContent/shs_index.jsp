@@ -27,13 +27,14 @@
 			font-size: 20px;
 		}
 		.btn_index{
-			padding: 15px 12px;
+			line-height: 110px;
 			background-color: yellowgreen;
 			color: white;
-			width: 120px;
+			width: 110px;
+			height: 110px;
 			display: inline-block;
-			border-radius: 10px;
 			font-size: 17px;
+			border-radius: 50%;
 		}
 		.btn_index:hover{
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
@@ -49,10 +50,17 @@
 		.btn3{
 			background-color: salmon;
 		}
+		.btn4{
+			background-color: black;
+		}
 		.container{
 			height: 320px;
 			display: flex;
 			flex-direction: column;
+			justify-content: space-evenly;
+		}
+		.line1, .line2{
+			display: flex;
 			justify-content: space-evenly;
 		}
 	</style>
@@ -64,14 +72,21 @@
 		
 		<div class="shs_manager"> - 학사관리 - </div>
 		<div class="container">
-			<div class="div_index">
-				<a href="insert.shs" class="btn_index btn1">학생등록</a>
+			<div class="line1">
+				<div class="div_index">
+					<a href="#" class="btn_index btn3">소개</a>
+				</div>
+				<div class="div_index">
+					<a href="select.shs" class="btn_index btn2">출석부</a>
+				</div>
 			</div>
-			<div class="div_index">
-				<a href="select.shs" class="btn_index btn2">출석부</a>
-			</div>
-			<div class="div_index">
-				<a href="#" class="btn_index btn3">만든이</a>
+			<div class="line2">
+				<div class="div_index">
+					<a href="search.shs" class="btn_index btn4">학생검색</a>
+				</div>			
+				<div class="div_index">
+					<a href="insert.shs" class="btn_index btn1">학생등록</a>
+				</div>
 			</div>
 		</div>
 	</div>

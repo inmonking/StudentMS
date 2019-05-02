@@ -15,6 +15,15 @@
 		select * from shsmember 
 		where sid = #{id}
 	</select>
+	<select id="memSearch" parameterType="String" resultType="MemberDTO">
+		<![CDATA[
+			select * from shsmember 
+			where sname like '%'||#{name}||'%'
+		]]>
+	</select>
+	
+	
+	
 	<update id="memUpdate" parameterType="MemberDTO">
 		update shsmember
 		set sname = #{sname},

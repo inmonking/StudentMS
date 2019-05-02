@@ -95,5 +95,17 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	public List<MemberDTO> memSelect(String name) {
+		sqlSession = sqlSessionFactory.openSession();
+		list = null;
+		try {
+			list = sqlSession.selectList("memSearch", name);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+	}
 	
 }
