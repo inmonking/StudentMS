@@ -40,6 +40,8 @@ pageEncoding="UTF-8"%>
 			display: inline-block;
 			border-radius: 10px;
 			font-size: 17px;
+			border: none;
+			cursor: pointer;
 		}
 		.btn_index:hover{
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
@@ -74,6 +76,7 @@ pageEncoding="UTF-8"%>
 			outline: none;
 			border: 1px solid #aaa;
 			padding: 0 10px;
+			background-color: white;
 		}
 		.btn_wrap{
 			display: flex;
@@ -119,7 +122,8 @@ pageEncoding="UTF-8"%>
 			</div>
 			<div class="div_index btn_wrap">
 				<a href="index.shs" class="btn_index btn3">취소</a>
-				<a href="#" class="btn_index btb1 submitBtn">등록</a>
+				<!-- <a href="#" class="btn_index btb1 submitBtn">등록</a> -->
+				<button type="submit" class="btn_index btb1 submitBtn">등록</button>
 			</div>
 		</form>
 	</div>
@@ -163,7 +167,6 @@ pageEncoding="UTF-8"%>
 					return false;
 				}
 				$('#frm_insert').submit();
-
 			});
 		});
 	</script>

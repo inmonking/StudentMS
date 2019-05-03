@@ -177,7 +177,7 @@
 			color: dodgerblue;
 		}
 		.cnt{
-			color: tomato;
+			color: tomato;0
 		}
 	</style>
 </head>
